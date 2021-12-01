@@ -43,5 +43,9 @@ RUN adduser --disabled-password \
     ${NB_USER}
 WORKDIR ${HOME}
 USER ${USER}
+RUN pwd
 
+# Clone the git repository with notebooks
+RUN git clone https://github.com/maxcrous/multiview_notebooks.git
+WORKDIR ./multiview_notebooks
 
